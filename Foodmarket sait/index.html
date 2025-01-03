@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <link rel="stylesheet"  href="css/main.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-container-logo" id="logo">
+                <img src="images\logo.png" alt="">
+            </div>
+            <div class="header-container-searcher">
+                <div class="header-search">
+                    <div class="categories">
+                        <select id="select">
+                            <option>All Categories</option>
+                            <option value="groceries">Groceries</option>
+                            <option value="drinks">Drinks</option>
+                            <option value="chocolates">Chocolates</option>
+                        </select>
+                    </div>
+                    <div id="searcher">
+                        <form action="">
+                            <input type="text" name="search" placeholder="Search for more than 20,000 products">
+                        </form>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="header-container-menu" id="header-container-last">
+                <div id="header-support">
+                    <p>For support?</p>
+                    <h5>+7 999 999-99-99</h5>
+                </div>
+                <div id="icons">
+                    <div>
+                        <a href="#">
+                            <img src="https://cdn-icons-png.flaticon.com/128/126/126486.png" alt="" width="30px" height="30px">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <img src="https://cdn-icons-png.flaticon.com/128/126/126471.png" alt="" width="30px" height="30px">
+                        </a>
+                    </div>
+                </div>
+                <div id="cart">
+                    <button id="butt1">
+                        <p>Your cart</p>
+                        <p>$342.00</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="header-container-down">
+            <nav>
+                <div class="categories">
+                    <select name="categories" id="">
+                        <option>Shop by Departaments</option>
+                        <option value="groceries">Groceries</option>
+                        <option value="drinks">Drinks</option>
+                        <option value="chocolates">Chocolates</option>
+                    </select>
+                </div>
+                <div>
+                    <a class="header-buttons">Women</a>
+                    <a class="header-buttons">Men</a>
+                    <a class="header-buttons">Kids</a>
+                    <a class="header-buttons" id="select-pre">Accessories</a>
+                    <button class="header-buttons">
+                        <select name="pages" id="">
+                            <option value="pages">Pages</option>
+                            <option value="about-us">About Us</option>
+                            <option value="shop">Shop</option>
+                            <option value="single-product">Single Product</option>
+                            <option value="cart">Cart</option>
+                            <option value="checkout">Checkout</option>
+                            <option value="blog">Blog</option>
+                            <option value="single-post">Single Post</option>
+                            <option value="styles">Styles</option>
+                            <option value="contact">Contact</option>
+                            <option value="..">Thank You</option>
+                            <option value="..">My Account</option>
+                        </select>
+                    </button>
+                    <a class="header-buttons">Brand</a>
+                    <a class="header-buttons">Sale</a>
+                    <a class="header-buttons">Blog</a>
+                </div>  
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="products">
+            <article id="smoothie-juice">
+                <div id="juice-text">
+                    <div id="juice-text-div">
+                        <p class="skidka">100% Natural</p>
+                        <h2>Fresh Smoothie<br> & Summer Juice</h2>
+                        <p id="smoothie-text">Experience the taste of nature in every sip! Our smoothies <br>and juices are made from 100% natural ingredients.</p>
+                        <button id="smoothie-button">SHOP NOW</button>
+                    </div>
+                </div>
+                <div id="first-imgs-container">
+                    <img src="images/product-thumb-1.png" alt="smoothie and juice" class="imgs-container-img">
+                </div>
+            </article>
+            <div id="main-product-container">
+                <article id="vegetables">
+                    <div class="vegetables-text">
+                        <div class="text">
+                            <p class="skidka">20% Off</p>
+                            <div>
+                                <hr><p>SALE</p>
+                            </div>
+                            <h2>Fruits & <br>Vegetables</h2>
+                            <a href="#" class="shop-link">Shop Collection →</a>
+                        </div>
+                    </div>
+                    <div class="imgs-container">
+                        <img src="images/ad-image-1.png" alt="vegetables" class="imgs-container-img">
+                    </div>
+                </article>
+                <article id="baked-products">
+                    <div class="vegetables-text">
+                        <div class="text">
+                            <p class="skidka">15% Off</p>
+                            <div>
+                                <hr><p>SALE</p>
+                            </div>
+                            <h2>Baked products</h2>
+                            <a href="#" class="shop-link">Shop Collection →</a>
+                        </div>
+                    </div>
+                    <div class="imgs-container">
+                        <img src="images/ad-image-2.png" alt="baked products" class="imgs-container-img">
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section id="category">
+            <div>
+                <h1>Category</h1>
+                <a href="#" id="category-link">View All Categories →</a>
+            </div>
+            <div>
+                <article class="category-blocks">
+                    <img src="images/icon-vegetables-broccoli.png" alt="vegetables">
+                    <h3>Fruits & Veges</h3>
+                </article>
+                <article class="category-blocks">
+                    <img src="images/icon-bread-baguette.png" alt="bread">
+                    <h3>Baked products</h3>
+                </article>
+                <article class="category-blocks">
+                    <img src="images/icon-soft-drinks-bottle.png" alt="drink">
+                    <h3>Drinks</h3>
+                </article>
+                <article class="category-blocks">
+                    <img src="images/icon-wine-glass-bottle.png" alt="vine">
+                    <h3>Beverages</h3>
+                </article>
+                <article class="category-blocks">
+                    <img src="images/icon-animal-products-drumsticks.png" alt="meat">
+                    <h3>Meat & Poultry</h3>
+                </article>
+                <article class="category-blocks">
+                    <img src="images/icon-bread-herb-flour.png" alt="marinades">
+                    <h3>Marinades</h3>
+                </article>
+            </div>
+        </section>
+        <section id="new-arrived-trends">
+            <div>
+                <h1>Newly Arrived Brands</h1>
+                <a href="#" id="category-link">View All Categories →</a>
+            </div>
+            <div>
+                <article class="trands-block">
+                    <img src="images\product-thumb-14.jpg" alt="">
+                    <div>
+                        <h3>Amber Jar</h3>
+                        <p>Honey best <br> nectar you wish <br>to get</p>
+                    </div>
+                </article>
+                <article class="trands-block">
+                    <img src="images\product-thumb-13.jpg" alt="">
+                    <div>
+                        <h3>Amber Jar</h3>
+                        <p>Honey best <br> nectar you wish <br>to get</p>
+                    </div>
+                </article>
+                <article class="trands-block">
+                    <img src="images\product-thumb-12.jpg" alt="">
+                    <div>
+                        <h3>Amber Jar</h3>
+                        <p>Honey best <br> nectar you wish <br>to get</p>
+                    </div>
+                </article>
+                <article class="trands-block">
+                    <img src="images\product-thumb-11.jpg" alt="">
+                    <div>
+                        <h3>Amber Jar</h3>
+                        <p>Honey best <br> nectar you wish <br>to get</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
