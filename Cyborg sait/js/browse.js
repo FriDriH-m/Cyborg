@@ -1,8 +1,12 @@
 var next = 257;
 var pre = -257;
 var index = ["first", "second", "third"];
+var stop = false;
 
 function Next(){
+    if (stop) return;
+    stop = true;
+
     //вычисляем элемент, находящийся в конце и помещаем его в переменную block1
     var element = document.getElementById("games-container").lastElementChild;
     var indexOfElement = index.indexOf(element.id);
@@ -22,11 +26,15 @@ function Next(){
         parent.style.transition = "none"; //убираем анимацию, чтобы возвращение на начальную позицию было незаметным
         parent.style.transform = `translateX(0px)`;
         parent.insertBefore(block1, parent.firstChild); //вставляем элемент в начало перед первым элементом
+        stop = false;
     }, 200);
     parent.style.transition = "transform 0.2s ease-in-out"; //возвращаем анимацию
 }
 
 function Pre(){
+    if (stop) return;
+    stop = true;
+
     //вычисляем элемент, находящийся в начале и помещаем его в переменную block1
     var element = document.getElementById("games-container").firstElementChild;
     var indexOfElement = index.indexOf(element.id);
@@ -46,6 +54,7 @@ function Pre(){
         parent.style.transition = "none"; //убираем анимацию, чтобы возвращение на начальную позицию было незаметным
         parent.style.transform = `translateX(0px)`;
         parent.appendChild(block1);
+        stop = false;
     }, 200);
     parent.style.transition = "transform 0.2s ease-in-out"; //возвращаем анимацию
 }

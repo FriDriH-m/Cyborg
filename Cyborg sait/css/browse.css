@@ -33,6 +33,11 @@ a{
     color: white;
 }
 
+ul {
+    list-style: none;
+    display: flex;
+}
+
 #header-logo{
     display: flex;
     align-items: center;
@@ -241,4 +246,28 @@ main{
 
 .headings div button:hover{
     transform: scale(1.2);
+}
+
+#top-downloaded ul{
+    width: 100%;
+    flex-direction: column;
+}
+
+#top-downloaded ul li{
+    flex: 1;
+}
+
+#top-downloaded ul li span{
+    width: 50px;
+}
+
+#top-downloaded h4{
+
+}
+
+#top-downloaded h6{
+
+}
+#top-downloaded img{
+    float: left;
 }
