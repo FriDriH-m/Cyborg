@@ -1,60 +1,69 @@
-var next = 257;
-var pre = -257;
-var index = ["first", "second", "third"];
-var stop = false;
+"use strict";
 
-function Next(){
-    if (stop) return;
-    stop = true;
+class Wrapper {
+    constructor(parentElement, nextDistance, prevDistance, array) {
+        this.ParentElement = document.getElementById(parentElement);
+        this.nextDistance = nextDistance;
+        this.prevDistance = prevDistance;
+        this.array = array;
+        this.stop = false;
+    }
 
-    //вычисляем элемент, находящийся в конце и помещаем его в переменную block1
-    var element = document.getElementById("games-container").lastElementChild;
-    var indexOfElement = index.indexOf(element.id);
-    var block1 = document.getElementById(index[indexOfElement]);
+    Info() {
+        console.log(this.ParentElement);
+        console.log(this.nextDistance);
+        console.log(this.prevDistance);
+        console.log(this.array);
+    }
 
-    //получаем родительсикй контейнер и перемещаем его на next пикселей
-    var parent = document.getElementById("games-container");
-    parent.style.transform = `translateX(${next}px)`;
+    Next() {
+        if (this.stop) return;
+        this.stop = true;
 
-    var cloneblock1 = block1.cloneNode(true); //клонируем первый элемент
-    cloneblock1.style.cssText = "position: absolute; left: -257px;"; //позиционируем клон в начале
-    parent.insertBefore(cloneblock1, parent.firstChild); //вставляем клон в конец
+        const element = this.ParentElement.lastElementChild;
+        const index = this.array.indexOf(element.id);
+        const block1 = document.getElementById(this.array[index]);
 
-    //когда контейнер переместился и анимация прекратилась, удаляем первый элемент и вставляем его в конец
-    setTimeout(function() {
-        parent.removeChild(cloneblock1); //удаляем клон
-        parent.style.transition = "none"; //убираем анимацию, чтобы возвращение на начальную позицию было незаметным
-        parent.style.transform = `translateX(0px)`;
-        parent.insertBefore(block1, parent.firstChild); //вставляем элемент в начало перед первым элементом
-        stop = false;
-    }, 200);
-    parent.style.transition = "transform 0.2s ease-in-out"; //возвращаем анимацию
+        this.ParentElement.style.transform = `translateX(${this.nextDistance}px)`;
+
+        const cloneblock1 = block1.cloneNode(true);
+        cloneblock1.style.cssText = `position: absolute; left: ${this.prevDistance}px;`;
+        console.log(this.ParentElement.firstChild)
+        this.ParentElement.insertBefore(cloneblock1, this.ParentElement.firstChild);
+
+        setTimeout(() => {
+            this.ParentElement.removeChild(cloneblock1);
+            this.ParentElement.style.transition = "none";
+            this.ParentElement.style.transform = `translateX(0px)`;
+            this.ParentElement.insertBefore(block1, this.ParentElement.firstChild);
+            this.stop = false;
+        }, 200);
+        this.ParentElement.style.transition = "transform 0.2s ease-in-out";
+    }
+
+    Pre() {
+        if (this.stop) return;
+        this.stop = true;
+
+        const element = this.ParentElement.firstElementChild;
+        const index = this.array.indexOf(element.id);
+        const block1 = document.getElementById(this.array[index]);
+
+        this.ParentElement.style.transform = `translateX(${this.prevDistance}px)`;
+
+        const cloneblock1 = block1.cloneNode(true);
+        cloneblock1.style.position = "relative";
+        this.ParentElement.appendChild(cloneblock1);
+
+        setTimeout(() => {
+            this.ParentElement.removeChild(cloneblock1);
+            this.ParentElement.style.transition = "none";
+            this.ParentElement.style.transform = `translateX(0px)`;
+            this.ParentElement.appendChild(block1);
+            this.stop = false;
+        }, 200);
+        this.ParentElement.style.transition = "transform 0.2s ease-in-out";
+    }
 }
 
-function Pre(){
-    if (stop) return;
-    stop = true;
-
-    //вычисляем элемент, находящийся в начале и помещаем его в переменную block1
-    var element = document.getElementById("games-container").firstElementChild;
-    var indexOfElement = index.indexOf(element.id);
-    var block1 = document.getElementById(index[indexOfElement]);
-
-    //получаем родительсикй контейнер и перемещаем его на pre пикселей
-    var parent = document.getElementById("games-container");
-    parent.style.transform = `translateX(${pre}px)`;
-
-    var cloneblock1 = block1.cloneNode(true); //клонируем первый элемент
-    cloneblock1.style.position = "relative";
-    parent.appendChild(cloneblock1); //вставляем клон в конец
-
-    //когда контейнер переместился и анимация прекратилась, вставляем первый элемент в конец
-    setTimeout(function() {
-        parent.removeChild(cloneblock1); //удаляем клон
-        parent.style.transition = "none"; //убираем анимацию, чтобы возвращение на начальную позицию было незаметным
-        parent.style.transform = `translateX(0px)`;
-        parent.appendChild(block1);
-        stop = false;
-    }, 200);
-    parent.style.transition = "transform 0.2s ease-in-out"; //возвращаем анимацию
-}
+const gamesContainer = new Wrapper("games-container", 257, -257, ["first", "second", "third"]);

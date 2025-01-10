@@ -6,11 +6,22 @@
 
 html, body {
     height: 100%;
-
+    display: flex;
 }
 
 #character {
-    position: relative;
+    position: absolute;
     width: 60px;
     height: 60px;
+    transition: top .3s, left .3s;
+}
+
+.enemy {
+    position: relative;
+    top: 360px;
+    left: 360px;
+    width: 30px;
+    height: 30px;
+    background-image: image('enemy.png');
+    border-radius: 50%;
 }
